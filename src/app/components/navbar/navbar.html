@@ -1,0 +1,26 @@
+<nav [class.scrolled]="isScrolled">
+  <a href="#hero" class="nav-logo" (click)="scrollToSection('hero')">
+    <div class="badge">PF</div>
+    PAMELA<span>.dev</span>
+  </a>
+  
+  <ul class="nav-links">
+    <li><a href="#about" (click)="scrollToSection('about')">
+      <span class="ico">⚙</span> Sobre mí
+    </a></li>
+    <li><a href="#about" (click)="scrollToSection('about')">
+      <span class="ico">&lt;&gt;</span> Habilidades
+    </a></li>
+    <li><a href="#projects" (click)="scrollToSection('projects')">
+      <span class="ico">▦</span> Proyectos
+    </a></li>
+    <li><a href="#experience" (click)="scrollToSection('experience')">
+      <span class="ico">🗓</span> Experiencia
+    </a></li>
+    <li><a href="#contact" (click)="scrollToSection('contact')">
+      <span class="ico">✉</span> Contacto
+    </a></li>
+  </ul>
+  
+  <a href="#contact" class="nav-cta" (click)="scrollToSection('contact')">Contactar</a>
+</nav>

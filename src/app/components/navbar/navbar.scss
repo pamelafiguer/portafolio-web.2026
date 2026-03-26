@@ -1,0 +1,109 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  background: rgba(7, 11, 18, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: all .3s ease;
+
+  &.scrolled {
+    background: rgba(7, 11, 18, 0.95);
+    border-bottom-color: rgba(0, 240, 200, 0.2);
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--cyan2), var(--purple));
+    display: grid;
+    place-items: center;
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+
+  span {
+    color: var(--cyan);
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: var(--text2);
+    font-size: 0.88rem;
+    font-family: var(--font-body);
+    transition: color .2s;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--cyan);
+    }
+
+    .ico {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+  }
+}
+
+.nav-cta {
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--cyan);
+  color: var(--cyan);
+  background: transparent;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, color .2s, box-shadow .2s;
+
+  &:hover {
+    background: var(--cyan);
+    color: var(--bg);
+    box-shadow: var(--glow-c);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+}

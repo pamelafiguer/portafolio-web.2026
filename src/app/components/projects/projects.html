@@ -1,0 +1,52 @@
+<section id="projects" class="section-reveal">
+  <div class="container">
+    <!-- Header -->
+    <div class="projects-header fade-up">
+      <span class="section-tag">PROYECTOS</span>
+      <h2 class="section-title">
+        Proyectos <span class="grad-text">Destacados</span>
+      </h2>
+      <p>
+        Explora mis soluciones implementadas que conectan el desarrollo de software 
+        con la potencia de la Inteligencia Artificial y el análisis de datos.
+      </p>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="projects-grid">
+      <div 
+        *ngFor="let project of projectsData"
+        class="project-card fade-up"
+      >
+        <!-- Thumbnail con grid y nodos -->
+        <div class="project-thumb">
+          <div class="grid-bg"></div>
+          <div class="nodes">
+            <div *ngFor="let icon of project.icons" class="node">
+              {{ icon }}
+            </div>
+          </div>
+          <span class="project-thumb-tag">Featured</span>
+        </div>
+
+        <!-- Body del proyecto -->
+        <div class="project-body">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          
+          <!-- Tags -->
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags" class="ptag">
+              {{ tag }}
+            </span>
+          </div>
+
+          <!-- Link -->
+          <a [href]="project.link" target="_blank" class="project-link">
+            Ver más →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

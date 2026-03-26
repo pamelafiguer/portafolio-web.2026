@@ -1,0 +1,337 @@
+#about {
+    padding: 7rem 0;
+    background-image: url('/image.png');
+    background-color: rgba(0, 0, 0, 0.116);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+
+    position: relative;
+    z-index: 1;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+// ── ABOUT CARD ─────────────────────────────────────────//
+.about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.2rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        
+        background: rgba(96, 102, 112, 0.897);
+    }
+}
+
+.about-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--cyan2), var(--purple));
+    display: grid;
+    place-items: center;
+    font-family: var(--font-head);
+    font-weight: 800;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.about-name {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+}
+
+.about-role-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+}
+
+.tag-role {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+
+    &.c {
+        background: rgba(0, 240, 200, 0.1);
+        color: var(--cyan);
+        border: 1px solid rgba(0, 240, 200, 0.2);
+    }
+
+    &.p {
+        background: rgba(168, 85, 247, 0.1);
+        color: var(--purple);
+        border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+}
+
+.about-text {
+    color: var(--text2);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+
+    strong {
+        color: var(--cyan);
+        font-weight: 600;
+    }
+
+    em {
+        color: var(--purple);
+        font-style: normal;
+        font-weight: 600;
+    }
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.8rem;
+}
+
+.stat {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.stat-num {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--cyan);
+    line-height: 1;
+
+    &.p {
+        color: var(--purple);
+    }
+}
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+}
+
+// ── SKILLS CARD ─────────────────────────────────────────//
+.skills-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.2rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--purple), var(--cyan));
+    }
+}
+
+.skills-title {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+        color: var(--cyan);
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+    }
+}
+
+.skill-cats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-cat {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+
+    &:hover {
+        border-color: rgba(0, 240, 200, 0.25);
+        background: rgba(0, 240, 200, 0.03);
+    }
+
+    &.p {
+        &:hover {
+            border-color: rgba(168, 85, 247, 0.25);
+            background: rgba(168, 85, 247, 0.03);
+        }
+    }
+
+    &.pk {
+        &:hover {
+            border-color: rgba(236, 72, 153, 0.25);
+            background: rgba(236, 72, 153, 0.03);
+        }
+    }
+}
+
+.skill-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+
+.skill-cat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    background: rgba(0, 240, 200, 0.1);
+    border: 1px solid rgba(0, 240, 200, 0.2);
+
+    &.p {
+        background: rgba(168, 85, 247, 0.1);
+        border-color: rgba(168, 85, 247, 0.2);
+    }
+
+    &.pk {
+        background: rgba(236, 72, 153, 0.1);
+        border-color: rgba(236, 72, 153, 0.2);
+    }
+}
+
+.skill-cat-info {
+    flex: 1;
+}
+
+.skill-cat-name {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--cyan);
+    margin-bottom: 0.05rem;
+
+    .skill-cat.p & {
+        color: var(--purple);
+    }
+
+    .skill-cat.pk & {
+        color: var(--pink);
+    }
+}
+
+.skill-cat-level {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.level-dots {
+    display: flex;
+    gap: 3px;
+}
+
+.level-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+
+    &.on {
+        background: var(--cyan);
+        box-shadow: 0 0 6px var(--cyan);
+    }
+
+    .skill-cat.p & {
+        &.on {
+            background: var(--purple);
+            box-shadow: 0 0 6px var(--purple);
+        }
+    }
+
+    .skill-cat.pk & {
+        &.on {
+            background: var(--pink);
+            box-shadow: 0 0 6px var(--pink);
+        }
+    }
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skill-tag {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    color: var(--text2);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+
+    .skill-cat:hover & {
+        color: var(--text);
+    }
+
+    .skill-cat.p & {
+        border-color: rgba(168, 85, 247, 0.15);
+    }
+
+    .skill-cat.pk & {
+        border-color: rgba(236, 72, 153, 0.15);
+    }
+}
+
+// ── RESPONSIVE ────────────────────────────────────────//
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}

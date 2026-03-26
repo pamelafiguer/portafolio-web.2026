@@ -1,0 +1,92 @@
+<section id="about" class="section-reveal">
+  <div class="container">
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
+      <span class="section-tag">SOBRE_MI</span>
+      <h2 class="section-title">
+        Diseñando interfaces. <span class="grad-text">Entrenando modelos.</span>
+      </h2>
+    </div>
+
+    <!-- Grid: Profile + Skills -->
+    <div class="about-grid">
+      
+      <!-- PROFILE CARD -->
+      <div class="about-card fade-up">
+        <div class="about-avatar">PF</div>
+        
+        <h3 class="about-name">Pamela Figueroa</h3>
+        
+        <div class="about-role-tags">
+          <span class="tag-role c">Frontend</span>
+          <span class="tag-role p">ML Junior</span>
+        </div>
+
+        <p class="about-text">
+          Desarrolladora frontend apasionada por crear interfaces hermosas y funcionales.
+          <strong>Especializada en Angular y React</strong>, con experiencia en machine learning
+          y análisis de datos. Me encanta transformar diseños en código limpio y optimizado.
+        </p>
+
+        <p class="about-text">
+          Actualmente explorando las intersecciones entre <em>IA y UX</em>, creando soluciones
+          inteligentes que resuelven problemas reales.
+        </p>
+
+        <!-- Stats -->
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Años exp</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num p">12</div>
+            <div class="stat-label">Proyectos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS CARD -->
+      <div class="skills-card fade-up" style="transition-delay: 0.15s;">
+        <h3 class="skills-title">
+          Skill Stack
+          <span>[3/10]</span>
+        </h3>
+
+        <div class="skill-cats">
+          <div 
+            *ngFor="let skill of skillsData"
+            [ngClass]="'skill-cat ' + skill.type"
+          >
+            <!-- Header -->
+            <div class="skill-cat-header">
+              <div [ngClass]="'skill-cat-icon ' + skill.type">
+                {{ skill.icon }}
+              </div>
+              <div class="skill-cat-info">
+                <div class="skill-cat-name">{{ skill.category }}</div>
+                <div class="skill-cat-level">
+                  <span>Level</span>
+                  <div class="level-dots">
+                    <span 
+                      *ngFor="let isFilled of getFilledDots(skill.level)"
+                      [ngClass]="isFilled ? 'level-dot on' : 'level-dot'"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="skill-tags">
+              <span *ngFor="let tag of skill.skills" class="skill-tag">
+                {{ tag }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

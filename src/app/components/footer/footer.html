@@ -1,0 +1,54 @@
+<footer class="section-reveal">
+  <div class="wrap">
+    <!-- Footer Main Grid -->
+    <div class="footer-grid">
+      <!-- LEFT: Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo">
+          <div class="logo-badge">PF</div>
+          <span>PAMELA<span>.DEV</span></span>
+        </a>
+        <p class="brand-description">
+          Desarrolladora Frontend & Especialista Junior en Machine Learning. 
+          Transformando datos en experiencias interactivas con inteligencia artificial.
+        </p>
+      </div>
+
+      <!-- MIDDLE: Links Grid -->
+      <div *ngFor="let section of footerSections" 
+           [ngClass]="'footer-section ' + section.color"
+           class="footer-section">
+        <h4>{{ section.title }}</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of section.links">
+            <a [href]="link.href" 
+               (click)="link.href.startsWith('#') && scrollToSection(link.href.slice(1))">
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Connect -->
+      <div class="footer-section footer-connect">
+        <h4>Conectar</h4>
+        <p class="footer-connect-desc">
+          ¿Listo para iniciar tu próximo proyecto de IA o web?
+        </p>
+        <div class="footer-email-badge">
+          pamelaestefani2005@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <span class="footer-copyright">
+        © {{ currentYear }} Pamela Figueroa Rosas. Todos los derechos reservados.
+      </span>
+      <span class="footer-credit">
+        Hecho con <span class="heart">♥</span> y Código
+      </span>
+    </div>
+  </div>
+</footer>

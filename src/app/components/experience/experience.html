@@ -1,0 +1,41 @@
+<section id="experience" class="section-reveal">
+  <div class="wrap">
+    <div class="eh fade-up">
+      <span class="section-tag">TRAYECTORIA</span>
+      <h2 class="section-title">Trayectoria <span class="grad-text">Profesional</span></h2>
+      <p>Experiencia en desarrollo frontend y aplicación de inteligencia artificial</p>
+    </div>
+
+    <div class="timeline">
+      <div *ngFor="let item of timelineItems; let i = index"
+           class="timeline-item fade-up"
+           [class.left]="i % 2 === 0"
+           [class.right]="i % 2 !== 0"
+           [class.edu]="item.isEducation"
+           [style.transition-delay]="(i * 0.1) + 's'">
+
+        <!-- Card (Tarjeta) -->
+        <div [ngClass]="{ 'edu': item.isEducation }" class="t-card">
+          <div class="t-title">{{ item.title }}</div>
+          <div class="t-company">{{ item.company }}</div>
+          
+          <div class="t-meta">
+            <span>{{ item.date }}<span>{{item.place}}</span></span>
+          </div>
+
+          <ul class="t-bullets">
+            <li *ngFor="let bullet of item.bullets">{{ bullet }}</li>
+          </ul>
+        </div>
+
+        <!-- Dot Connector (Punto central) -->
+        <div [ngClass]="{ 'edu': item.isEducation }" class="t-dot">
+          
+        </div>
+
+        <!-- Empty space for right-aligned items -->
+        <div class="t-empty"></div>
+      </div>
+    </div>
+  </div>
+</section>

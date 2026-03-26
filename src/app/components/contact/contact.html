@@ -1,0 +1,104 @@
+<section id="contact" class="section-reveal">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- LEFT: Contact Info -->
+      <div class="contact-left fade">
+        <span class="section-tag">CONTACTO</span>
+        <h2 class="contact-title">¿Construimos algo <span class="grad-text">increíble juntos?</span></h2>
+        
+        <p class="contact-desc">
+          Actualmente estoy abierta a nuevas oportunidades. Si tienes una consulta, un proyecto en mente, 
+          o simplemente quieres saludar, ¡mi bandeja de entrada está abierta!
+        </p>
+
+        <!-- Contact Links -->
+        <div class="contact-links">
+          <a *ngFor="let link of contactLinks" 
+             [href]="link.href"
+             target="_blank"
+             rel="noopener noreferrer"
+             [ngClass]="'contact-link ' + link.color"
+             class="contact-link">
+            
+            <div [ngClass]="'cl-icon ' + link.color" class="cl-icon">
+              {{ link.icon }}
+            </div>
+            
+            <div class="cl-info">
+              <div class="cl-label">{{ link.label }}</div>
+              <div class="cl-value">{{ link.value }}</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Terminal Form -->
+      <div class="terminal fade" [style.transition-delay]="'0.15s'">
+        <!-- Terminal Bar (macOS style) -->
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-title">contact.sh</div>
+        </div>
+
+        <!-- Terminal Body -->
+        <div class="terminal-body">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <!-- Name Field -->
+            <div class="form-field">
+              <label class="terminal-label">pf@portfolio ~ $</label>
+              <input 
+                type="text"
+                class="terminal-input"
+                placeholder="Nombre completo"
+                formControlName="name"
+                [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-field">
+              <label class="terminal-label">pf@portfolio ~ $</label>
+              <input 
+                type="email"
+                class="terminal-input"
+                placeholder="tu@email.com"
+                formControlName="email"
+                [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+              />
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-field">
+              <label class="terminal-label">pf@portfolio ~ $</label>
+              <textarea 
+                class="terminal-input"
+                placeholder="Tu mensaje..."
+                formControlName="message"
+                [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+              ></textarea>
+            </div>
+
+            <!-- Status Message -->
+            <div *ngIf="submitMessage" class="submit-message" [class.success]="submitMessage.includes('enviado')">
+              {{ submitMessage }}
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit"
+              class="submit-button"
+              [disabled]="isSubmitting"
+            >
+              <span *ngIf="!isSubmitting">Enviar Mensaje →</span>
+              <span *ngIf="isSubmitting">Enviando...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
