@@ -147,10 +147,20 @@
   flex-shrink: 0;
   transition: all 0.3s ease;
 
+  .dot-icon {
+    font-size: 1.15rem;
+    color: var(--cyan);
+    transition: all 0.3s ease;
+  }
+
   /* Education styling */
   &.edu {
     border-color: var(--purple);
     box-shadow: 0 0 18px rgba(168, 85, 247, 0.28);
+
+    .dot-icon {
+      color: var(--purple);
+    }
 
     &:hover {
       box-shadow: 0 0 28px rgba(168, 85, 247, 0.4);
@@ -238,6 +248,25 @@
   font-size: 0.68rem;
   color: var(--text3);
   margin-bottom: 0.9rem;
+
+  .meta-icon {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+  }
+
+  .meta-separator {
+    width: 1px;
+    height: 14px;
+    background: var(--text3);
+    opacity: 0.3;
+    margin: 0 0.4rem;
+  }
+
+  &:hover .meta-icon {
+    color: var(--cyan);
+    opacity: 1;
+  }
 }
 
 /* Bullet list */

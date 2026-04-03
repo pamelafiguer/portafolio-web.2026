@@ -81,6 +81,24 @@
   place-items: center;
   font-size: 1.4rem;
   animation: floatNode 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+
+  .node-icon {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    background: var(--surface);
+    border-color: rgba(0, 240, 200, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 240, 200, 0.1);
+
+    .node-icon {
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(0, 240, 200, 0.3);
+    }
+  }
 
   &:nth-child(2) {
     animation-delay: 0.5s;

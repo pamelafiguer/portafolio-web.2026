@@ -1,43 +1,59 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface ContactLink {
   label: string;
   value: string;
-  icon: string;
+  icon: IconDefinition;
   color: 'cyan' | 'purple';
   href: string;
 }
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule],
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss']
 })
 export class Contact {
+  faEnvelope = faEnvelope;
+  faGithub = faGithub;
+  faLinkedin = faLinkedin;
+  faWhatsapp = faWhatsapp;
+
   contactLinks: ContactLink[] = [
     {
       label: 'Email',
       value: 'pamelaestefani2005@gmail.com',
-      icon: '✉️',
+      icon: faEnvelope,
       color: 'cyan',
       href: 'mailto:pamelaestefani2005@gmail.com'
     },
     {
       label: 'LinkedIn',
-      value: 'Pamela Figueroa',
-      icon: '💼',
+      value: 'Pamela Estefani Figueroa Rosas',
+      icon: faLinkedin,
       color: 'cyan',
-      href: 'https://linkedin.com/in/pamelapfigueroa'
+      href: 'https://www.linkedin.com/in/pamela-estefani-figueroa-rosas-539303280'
     },
     {
       label: 'GitHub',
       value: 'pamelafiguer',
-      icon: '🐙',
+      icon: faGithub,
       color: 'purple',
       href: 'https://github.com/pamelafiguer'
+    },
+    {
+      label: 'WhatsApp',
+      value: '+51 903 447 553',
+      icon: faWhatsapp,
+      color: 'cyan',
+      href: 'https://wa.me/+51903447553'
     }
   ];
 

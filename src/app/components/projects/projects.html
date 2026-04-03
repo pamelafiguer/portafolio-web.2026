@@ -23,7 +23,7 @@
           <div class="grid-bg"></div>
           <div class="nodes">
             <div *ngFor="let icon of project.icons" class="node">
-              {{ icon }}
+              <fa-icon [icon]="icon" class="node-icon"></fa-icon>
             </div>
           </div>
           <span class="project-thumb-tag">Featured</span>

@@ -20,7 +20,13 @@
           <div class="t-company">{{ item.company }}</div>
           
           <div class="t-meta">
-            <span>{{ item.date }}<span>{{item.place}}</span></span>
+            <span>
+              <fa-icon [icon]="faCalendar" class="meta-icon"></fa-icon>
+              {{ item.date }}
+              <span class="meta-separator"></span>
+              <fa-icon [icon]="faMapPin" class="meta-icon"></fa-icon>
+              {{item.place}}
+            </span>
           </div>
 
           <ul class="t-bullets">
@@ -30,7 +36,7 @@
 
         <!-- Dot Connector (Punto central) -->
         <div [ngClass]="{ 'edu': item.isEducation }" class="t-dot">
-          
+          <fa-icon [icon]="item.isEducation ? faGraduationCap : faBriefcase" class="dot-icon"></fa-icon>
         </div>
 
         <!-- Empty space for right-aligned items -->

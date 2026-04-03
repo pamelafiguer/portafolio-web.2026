@@ -1,92 +1,174 @@
-<section id="about" class="section-reveal">
-  <div class="container">
-    <!-- Header -->
-    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
-      <span class="section-tag">SOBRE_MI</span>
-      <h2 class="section-title">
-        Diseñando interfaces. <span class="grad-text">Entrenando modelos.</span>
-      </h2>
+<section id="about">
+  <div class="wrap">
+    <!-- HEADER -->
+    <div class="sec-hdr fade">
+      <div class="line-deco">
+        <span class="lbl">SOBRE MÍ</span>
+      </div>
+      <h2 class="sh">¿Quién soy?</h2>
     </div>
 
-    <!-- Grid: Profile + Skills -->
-    <div class="about-grid">
-      
-      <!-- PROFILE CARD -->
-      <div class="about-card fade-up">
-        <div class="about-avatar">PF</div>
+    <!-- ABOUT GRID -->
+    <div class="about-grid fade">
+      <!-- AVATAR COLUMN -->
+      <div class="av-col">
+        <div class="av-wrap">
+          <div class="av-outer-ring"></div>
+          <div class="av-circle">
+            <div class="av-name">Pamela<br>Figueroa</div>
+            <div class="av-role-lbl">Full-Stack Dev &<br>ML Junior</div>
+          </div>
+        </div>
         
-        <h3 class="about-name">Pamela Figueroa</h3>
-        
-        <div class="about-role-tags">
-          <span class="tag-role c">Frontend</span>
-          <span class="tag-role p">ML Junior</span>
+        <!-- FLOATING TAGS -->
+        <span class="ftag ft1">Angular 19</span>
+        <span class="ftag ft2">Full-Stack</span>
+        <span class="ftag ft3">Python & ML</span>
+      </div>
+
+      <!-- INFO COLUMN -->
+      <div class="ab-txt">
+        <div class="ab-sub">
+          Desarrolladora Full-Stack & ML Junior
         </div>
 
-        <p class="about-text">
-          Desarrolladora frontend apasionada por crear interfaces hermosas y funcionales.
-          <strong>Especializada en Angular y React</strong>, con experiencia en machine learning
-          y análisis de datos. Me encanta transformar diseños en código limpio y optimizado.
+        <p class="abt">
+          Soy una <strong>Desarrolladora Full Stack</strong> con enfoque integral: desde la concepción visual en Figma hasta el despliegue en producción. Mi especialidad es <strong>Angular 19 y TypeScript</strong>, aunque domino <strong>React, HTML5, CSS y SCSS</strong> para crear interfaces píxel-perfect que cautivan usuarios.
         </p>
 
-        <p class="about-text">
-          Actualmente explorando las intersecciones entre <em>IA y UX</em>, creando soluciones
-          inteligentes que resuelven problemas reales.
+        <p class="abt">
+          En el backend, construyo arquitecturas robustas con <strong>Java (Spring Boot), PHP (Laravel) y Python (Flask/Django)</strong>, gestionando datos en entornos <strong>relacionales (MySQL/PostgreSQL) y NoSQL (MongoDB)</strong>. Mi experiencia incluye APIs REST, ERPs, plataformas e-commerce y soluciones de gestión clínica que escalan y performan.
         </p>
 
-        <!-- Stats -->
-        <div class="about-stats">
-          <div class="stat">
-            <div class="stat-num">4+</div>
-            <div class="stat-label">Años exp</div>
+        <p class="abt">
+          No solo escribo código; <em>diseño soluciones</em>. Integro <strong>Machine Learning para análisis predictivo</strong> y mantengo un flujo de trabajo ágil y eficiente. Mi objetivo es transformar necesidades de negocio en productos digitales innovadores, precisos y de <em>alto impacto</em>.
+        </p>
+
+        <div class="ab-divider"></div>
+
+        <!-- STATS -->
+        <div class="stats-row">
+          <div class="si">
+            <div class="sn">3+</div>
+            <div class="sl">AÑOS DE ESTUDIO</div>
           </div>
-          <div class="stat">
-            <div class="stat-num p">12</div>
-            <div class="stat-label">Proyectos</div>
+          <div class="si">
+            <div class="sn">3</div>
+            <div class="sl">EXPERIENCIAS</div>
+          </div>
+          <div class="si">
+            <div class="sn">2</div>
+            <div class="sl">PROYECTOS IA</div>
+          </div>
+          <div class="si">
+            <div class="sn">10+</div>
+            <div class="sl">TECNOLOGÍAS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-hdr fade">
+      <div class="line-deco pk">
+        <span class="lbl pk">HABILIDADES</span>
+      </div>
+      <h2 class="sh">Stack <span class="grad">Tecnológico</span></h2>
+      <p style="color: var(--text2); margin-top: 0.5rem; text-align: center;">Tecnologías y herramientas con las que construyo soluciones reales</p>
+    </div>
+
+    <!-- SKILLS GRID -->
+    <div class="skills-grid fade">
+      <!-- FRONTEND -->
+      <div class="sg-col">
+        <h3 class="c"><fa-icon [icon]="faAngular" class="section-icon"></fa-icon> FRONTEND DEVELOPMENT</h3>
+        <div *ngFor="let skill of frontendSkills" class="sbar">
+          <div class="sbar-hdr">
+            <div class="sbar-name-wrap">
+              <fa-icon [icon]="skill.icon" class="skill-icon"></fa-icon>
+              <span class="sbar-name">{{ skill.name }}</span>
+            </div>
+            <span class="sbar-pct">{{ skill.percentage }}%</span>
+          </div>
+          <div class="sbar-track">
+            <div class="sbar-fill c" [style.width.%]="skill.percentage" [attr.data-w]="skill.percentage"></div>
           </div>
         </div>
       </div>
 
-      <!-- SKILLS CARD -->
-      <div class="skills-card fade-up" style="transition-delay: 0.15s;">
-        <h3 class="skills-title">
-          Skill Stack
-          <span>[3/10]</span>
-        </h3>
-
-        <div class="skill-cats">
-          <div 
-            *ngFor="let skill of skillsData"
-            [ngClass]="'skill-cat ' + skill.type"
-          >
-            <!-- Header -->
-            <div class="skill-cat-header">
-              <div [ngClass]="'skill-cat-icon ' + skill.type">
-                {{ skill.icon }}
-              </div>
-              <div class="skill-cat-info">
-                <div class="skill-cat-name">{{ skill.category }}</div>
-                <div class="skill-cat-level">
-                  <span>Level</span>
-                  <div class="level-dots">
-                    <span 
-                      *ngFor="let isFilled of getFilledDots(skill.level)"
-                      [ngClass]="isFilled ? 'level-dot on' : 'level-dot'"
-                    ></span>
-                  </div>
-                </div>
-              </div>
+      <!-- ML & IA -->
+      <div class="sg-col">
+        <h3 class="p"><fa-icon [icon]="faBrain" class="section-icon"></fa-icon> MACHINE LEARNING & IA</h3>
+        <div *ngFor="let skill of mlSkills" class="sbar">
+          <div class="sbar-hdr">
+            <div class="sbar-name-wrap">
+              <fa-icon [icon]="skill.icon" class="skill-icon"></fa-icon>
+              <span class="sbar-name">{{ skill.name }}</span>
             </div>
-
-            <!-- Tags -->
-            <div class="skill-tags">
-              <span *ngFor="let tag of skill.skills" class="skill-tag">
-                {{ tag }}
-              </span>
-            </div>
+            <span class="sbar-pct">{{ skill.percentage }}%</span>
+          </div>
+          <div class="sbar-track">
+            <div class="sbar-fill p" [style.width.%]="skill.percentage" [attr.data-w]="skill.percentage"></div>
           </div>
         </div>
       </div>
 
+      <!-- BACKEND -->
+      <div class="sg-col">
+        <h3 class="pk"><fa-icon [icon]="faGear" class="section-icon"></fa-icon> BACKEND & LENGUAJES</h3>
+        <div *ngFor="let skill of backendSkills" class="sbar">
+          <div class="sbar-hdr">
+            <div class="sbar-name-wrap">
+              <fa-icon [icon]="skill.icon" class="skill-icon"></fa-icon>
+              <span class="sbar-name">{{ skill.name }}</span>
+            </div>
+            <span class="sbar-pct">{{ skill.percentage }}%</span>
+          </div>
+          <div class="sbar-track">
+            <div class="sbar-fill pk" [style.width.%]="skill.percentage" [attr.data-w]="skill.percentage"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOOLS & DESIGN -->
+      <div class="sg-col">
+        <h3 class="c2"><fa-icon [icon]="faDatabase" class="section-icon"></fa-icon> BD, DISEÑO & HERRAMIENTAS</h3>
+        <div *ngFor="let skill of dbDesignSkills" class="sbar">
+          <div class="sbar-hdr">
+            <div class="sbar-name-wrap">
+              <fa-icon [icon]="skill.icon" class="skill-icon"></fa-icon>
+              <span class="sbar-name">{{ skill.name }}</span>
+            </div>
+            <span class="sbar-pct">{{ skill.percentage }}%</span>
+          </div>
+          <div class="sbar-track">
+            <div class="sbar-fill c2" [style.width.%]="skill.percentage" [attr.data-w]="skill.percentage"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECH BADGES -->
+    <div class="badges-wrap fade">
+      <div class="badges-title">&lt;/&gt; TECNOLOGÍAS &lt;/&gt;</div>
+      <div class="badges-cloud">
+        <div 
+          *ngFor="let tech of technologies; let i = index" 
+          class="badge-item" 
+          [ngClass]="'b' + ((i % 10) + 1)"
+          [title]="tech.name"
+          [style.--badge-color]=""
+        >
+          <div class="badge-icon-wrap">
+            <fa-icon [icon]="tech.icon" class="badge-icon"></fa-icon>
+          </div>
+          <span class="badge-text">{{ tech.name }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

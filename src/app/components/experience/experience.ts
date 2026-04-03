@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faBriefcase, faGraduationCap, faCalendar, faMapPin } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface TimelineItem {
   title: string;
@@ -12,17 +15,21 @@ interface TimelineItem {
 
 @Component({
   selector: 'app-experience',
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './experience.html',
   styleUrls: ['./experience.scss']
 })
-export class Experience{
+export class Experience {
+  faBriefcase = faBriefcase;
+  faGraduationCap = faGraduationCap;
+  faCalendar = faCalendar;
+  faMapPin = faMapPin;
   timelineItems: TimelineItem[] = [
     {
       title: 'Desarrolladora FullStack',
       company: 'Constructora & Multiservicios Caqui E.I.R.L.',
-      date: '📅 Feb 2025 – Nov 2025',
-      place: '📍 Lima, Perú',
+      date: 'Feb 2025 – Nov 2025',
+      place: 'Lima, Perú',
       isEducation: false,
       bullets: [
         'Desarrollé apps web con Angular y TypeScript bajo arquitectura de componentes',
@@ -33,8 +40,8 @@ export class Experience{
     {
       title: 'ML Junior – Analista de Datos',
       company: 'Conauti SAC',
-      date: '📅 Sep 2024 – Dic 2024',
-      place: '📍 Lima, Perú',
+      date: 'Sep 2024 – Dic 2024',
+      place: 'Lima, Perú',
       isEducation: true,
       bullets: [
         'Implementé flujos conversacionales con LangGraph.',
@@ -45,8 +52,8 @@ export class Experience{
     {
       title: 'Desarrolladora Web',
       company: 'Grupo GN.SAC',
-      date: '📅 Feb 2024 – Sep 2024',
-      place: '📍 Lima, Perú',
+      date: 'Feb 2024 – Sep 2024',
+      place: 'Lima, Perú',
       isEducation: false,
       bullets: [
         'Desarrollé soluciones frontend con Angular.',
@@ -57,8 +64,8 @@ export class Experience{
     {
       title: 'Ingeniería de Software con IA',
       company: 'SENATI',
-      date: '📅 May 2023 – Feb 2026',
-      place: '📍 Lima – Cercado de Lima',
+      date: 'May 2023 – Feb 2026',
+      place: 'Lima – Cercado de Lima',
       isEducation: true,
       bullets: [
         'Programación de sistemas, IA, Machine Learning, BD y Arquitectura.',
